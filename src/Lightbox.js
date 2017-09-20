@@ -325,7 +325,7 @@ Lightbox.defaultProps = {
 	imageCountSeparator: ' of ',
 	leftArrowTitle: 'Previous (Left arrow key)',
 	onClickShowNextImage: true,
-  preloadImages: true,
+	preloadImages: true,
 	preloadNextImage: true,
 	rightArrowTitle: 'Next (Right arrow key)',
 	showCloseButton: true,
