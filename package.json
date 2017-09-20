@@ -1,5 +1,5 @@
 {
-  "name": "react-images",
+  "name": "react-images-lightbox",
   "version": "0.5.6",
   "description": "A simple, responsive lightbox component for displaying an array of images with React.js",
   "main": "lib/Lightbox.js",

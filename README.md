@@ -9,7 +9,7 @@ A simple, responsive lightbox component for displaying an array of images.
 
 
 ```bash
-npm install --save react-images
+npm install --save react-images-lightbox
 ```
 
 ```jsx
@@ -129,6 +129,7 @@ onClose | func | undefined | Required. Handle closing of the lightbox
 onClickImage | func | undefined | Handle click on image
 onClickThumbnail | func | undefined | Handle click on thumbnail
 preloadNextImage | bool | true | Based on the direction the user is navigating, preload the next available image
+preloadImages| bool | true | preload images
 rightArrowTitle | string | ' Next (Right arrow key) ' | Customize right arrow title
 showCloseButton | bool  | true | Optionally display a close "X" button in top right corner
 showImageCount | bool  | true | Optionally display image index, e.g., "3 of 20"

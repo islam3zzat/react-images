@@ -2932,6 +2932,13 @@ var Lightbox = (function (_Component) {
 	}, {
 		key: 'componentDidMount',
 		value: function componentDidMount() {
+			var _this = this;
+
+			if (this.props.isOpen && this.props.preloadImages) {
+				this.props.images.forEach(function (img, idx) {
+					_this.preloadImage(idx);
+				});
+			}
 			if (this.props.isOpen && this.props.enableKeyboardInput) {
 				window.addEventListener('keydown', this.handleKeyboardInput);
 			}
@@ -2956,12 +2963,12 @@ var Lightbox = (function (_Component) {
 
 				// if we know the user's direction just get one image
 				// otherwise, to be safe, we need to grab one in each direction
-				if (preloadIndex) {
-					this.preloadImage(preloadIndex);
-				} else {
-					this.preloadImage(prevIndex);
-					this.preloadImage(nextIndex);
-				}
+				// if (preloadIndex) {
+				// 	this.preloadImage(preloadIndex);
+				// } else {
+				// 	this.preloadImage(prevIndex);
+				// 	this.preloadImage(nextIndex);
+				// }
 			}
 
 			// add/remove event listeners
@@ -3224,6 +3231,7 @@ Lightbox.propTypes = {
 	onClickNext: _propTypes2['default'].func,
 	onClickPrev: _propTypes2['default'].func,
 	onClose: _propTypes2['default'].func.isRequired,
+	preloadImages: _propTypes2['default'].bool,
 	preloadNextImage: _propTypes2['default'].bool,
 	rightArrowTitle: _propTypes2['default'].string,
 	showCloseButton: _propTypes2['default'].bool,
@@ -3240,6 +3248,7 @@ Lightbox.defaultProps = {
 	imageCountSeparator: ' of ',
 	leftArrowTitle: 'Previous (Left arrow key)',
 	onClickShowNextImage: true,
+	preloadImages: true,
 	preloadNextImage: true,
 	rightArrowTitle: 'Next (Right arrow key)',
 	showCloseButton: true,
